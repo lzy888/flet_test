@@ -1,18 +1,14 @@
 import flet as ft
 
 
-async def main(page: ft.Page):
+def main(page: ft.Page):
     # ---------- 页面基础设置（桌面端模拟手机窗口） ----------
     page.title = "Flet 手机应用演示"
     page.padding = 0
     page.theme_mode = ft.ThemeMode.LIGHT
     page.theme = ft.Theme(color_scheme_seed=ft.Colors.INDIGO)
-    # 仅桌面端设置窗口尺寸，移动端/APK 忽略
-    try:
-        page.window.width = 420
-        page.window.height = 800
-    except Exception:
-        pass
+    page.window.width = 420
+    page.window.height = 800
 
     # ---------- 全局状态（跨页面共享数据） ----------
     user = {
